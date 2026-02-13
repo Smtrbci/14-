@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>14 февраля 💌</title>
+    <style>
+      :root {
+        --bg1: #070a1a;
+        --bg2: #0b1740;
+        --card: rgba(255, 255, 255, 0.08);
+        --stroke: rgba(255, 255, 255, 0.14);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.68);
+        --accent: #ff5ea8;
+        --accent2: #7c3aed;
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        --r: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        color: var(--text);
+
+        background: radial-gradient(1000px 700px at 20% 10%, rgba(124, 58, 237, 0.22), transparent 60%),
+          radial-gradient(900px 650px at 80% 25%, rgba(255, 94, 168, 0.2), transparent 55%),
+          linear-gradient(160deg, var(--bg1), var(--bg2));
+
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      /* floating icons */
+      .layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .p {
+        position: absolute;
+        font-size: 18px;
+        opacity: 0.85;
+        filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
+        animation: rise linear forwards;
+      }
+      @keyframes rise {
+        from {
+          transform: translateY(0) translateX(0) scale(0.9);
+          opacity: 0;
+        }
+        12% {
+          opacity: 0.9;
+        }
+        to {
+          transform: translateY(-115vh) translateX(var(--dx)) scale(1.25);
+          opacity: 0;
+        }
+      }
+
+      .wrap {
+        width: min(1060px, 92vw);
+        margin: 0 auto;
+        padding: 28px 0 70px;
+        position: relative;
+        z-index: 3;
+      }
+
+      header {
+        padding: 14px 14px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 3.8vw, 48px);
+        letter-spacing: -0.02em;
+        line-height: 1.06;
+      }
+      .sub {
+        margin: 8px 0 0;
+        max-width: 66ch;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 15px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        backdrop-filter: blur(10px);
+        color: var(--muted);
+        font-size: 13px;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+        user-select: none;
+        white-space: nowrap;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 16px;
+        padding: 0 14px;
+        margin-top: 14px;
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        border-radius: var(--r);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+        overflow: hidden;
+      }
+
+      /* Left main */
+      .main {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 430px;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        width: fit-content;
+        color: var(--muted);
+        font-size: 13px;
+        user-select: none;
+      }
+      .bigNumber {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-top: 4px;
+        flex-wrap: wrap;
+      }
+      .bigNumber .n {
+        font-size: 54px;
+        font-weight: 950;
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .bigNumber .lbl {
+        color: var(--muted);
+        font-weight: 800;
+      }
+      .bar {
+        height: 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+        margin-top: 6px;
+      }
+      .fill {
+        height: 100%;
+        width: 20%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        transition: width 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+
+      .para {
+        margin: 0;
+        line-height: 1.75;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .para b {
+        color: #fff;
+      }
+      .sig {
+        margin-top: auto;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-weight: 950;
+      }
+      .sig span {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      /* Right cards */
+      .side {
+        padding: 18px;
+        display: grid;
+        gap: 12px;
+      }
+      .tile {
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 14px;
+        line-height: 1.7;
+      }
+      .tile b {
+        color: #fff;
+      }
+      .tile small {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .coupon {
+        border: 1px dashed rgba(255, 255, 255, 0.26);
+        border-radius: 18px;
+        padding: 14px;
+        background: linear-gradient(135deg, rgba(255, 94, 168, 0.14), rgba(124, 58, 237, 0.1));
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .coupon .k {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+      }
+      .coupon .v {
+        font-size: 16px;
+        font-weight: 950;
+        margin-top: 6px;
+      }
+      .coupon .s {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 6px;
+        line-height: 1.5;
+      }
+      .stamp {
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.08);
+        font-weight: 950;
+        color: rgba(255, 255, 255, 0.92);
+        white-space: nowrap;
+        align-self: center;
+        cursor: pointer;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      button {
+        border: 0;
+        cursor: pointer;
+        padding: 10px 12px;
+        border-radius: 14px;
+        font-weight: 950;
+        color: rgba(255, 255, 255, 0.92);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease;
+        backdrop-filter: blur(10px);
+      }
+      button:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(255, 255, 255, 0.24);
+      }
+      button.primary {
+        background: linear-gradient(135deg, rgba(255, 94, 168, 0.92), rgba(124, 58, 237, 0.82));
+        color: #1a0713;
+      }
+
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: 18px;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: rgba(255, 255, 255, 0.92);
+        padding: 10px 12px;
+        border-radius: 999px;
+        backdrop-filter: blur(10px);
+        display: none;
+        z-index: 99999;
+        font-size: 13px;
+      }
+      .toast.show {
+        display: block;
+        animation: pop 0.22s ease-out;
+      }
+      @keyframes pop {
+        from {
+          transform: translateX(-50%) translateY(6px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* HUG MODAL */
+      .hugModal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(6px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 99998;
+      }
+      .hugModal.show {
+        display: flex;
+        animation: fadeIn 0.25s ease;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .hugCard {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 22px;
+        padding: 26px;
+        text-align: center;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(12px);
+        max-width: 320px;
+      }
+      .hugHeart {
+        font-size: 52px;
+        margin-bottom: 10px;
+        animation: beat 1s infinite;
+      }
+      @keyframes beat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+      .hugCard h2 {
+        margin: 0 0 8px;
+      }
+      .hugCard p {
+        margin: 0 0 14px;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+      }
+      .hugCard button {
+        border: 0;
+        padding: 10px 14px;
+        border-radius: 14px;
+        font-weight: 900;
+        cursor: pointer;
+        background: linear-gradient(135deg, #ff5ea8, #7c3aed);
+        color: #140514;
+      }
+
+      /* SNOW (front) */
+      .snow {
+        position: fixed;
+        top: -10px;
+        color: rgba(255, 255, 255, 0.9);
+        user-select: none;
+        pointer-events: none;
+        z-index: 999999; /* снег поверх всего */
+        animation: snowFall linear forwards;
+      }
+      @keyframes snowFall {
+        to {
+          transform: translateY(110vh);
+          opacity: 0.85;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="layer" id="layer"></div>
+    <div class="toast" id="toast">Скопировано ✅</div>
+
+    <div class="wrap">
+      <header>
+        <div>
+          <h1>💌 14 февраля</h1>
+          <p class="sub">
+            Может, мы и не «пара»… но я не умею прятать свои чувства. И да:
+            <b>я с нетерпением жду нашей встречи</b>.
+          </p>
+        </div>
+        <div class="pill" id="today">📅 —</div>
+      </header>
+
+      <div class="grid">
+        <!-- LEFT -->
+        <div class="card">
+          <div class="main">
+            <div class="tag">🇷🇺 Москва vibe • маленький сюрприз</div>
+
+            <div class="bigNumber">
+              <div class="n" id="days">--</div>
+              <div class="lbl">дней осталось (22 апреля)</div>
+            </div>
+            <div class="bar"><div class="fill" id="fill"></div></div>
+
+            <p class="para">
+              <b>Анжелика</b>, с того дня, как я тебя узнал, кое-что стало более
+              «понятным». Например: когда в течение дня происходит что-то важное,
+              первой в голове появляешься ты.
+            </p>
+
+            <p class="para">
+              Сегодня 14 февраля… возможно, у нас нет ярлыка «пара», но мне всё равно
+              хочется оставить тебе что-то, что сделает тебя <b>чуть счастливее</b>.
+            </p>
+
+            <p class="para">
+              Когда наступит день нашей встречи в Стамбуле, я уже знаю, что внутри
+              скажу: «вот оно». Чем ближе дата — тем сильнее моё волнение.
+            </p>
+
+            <p class="para">
+              А пока просто знай: я рядом. И ты для меня <b>по-настоящему</b> важна.
+            </p>
+
+            <div class="sig">
+              <div>— Samet</div>
+              <span>💗 далеко, но от сердца</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="card">
+          <div class="side">
+            <div class="tile">
+              🌷 То, что я хочу сказать тебе сегодня:
+              <b>я тебя люблю.</b>
+              <small>Иногда самая простая фраза — самая точная.</small>
+            </div>
+
+            <div class="tile">
+              ✨ Расстояние не делает чувства «далёкими».
+              <small>С моей стороны ты всегда рядом.</small>
+            </div>
+
+            <div class="tile">
+              🏙️ <b>Москва vibe</b><br />
+              Однажды после Стамбула… давай выпьем кофе и в Москве ☕❄️
+              <small>И я спрошу тебя: «Обнимемся?» 😄</small>
+            </div>
+
+            <div class="coupon">
+              <div>
+                <div class="k">🎟️ КУПОН НА ВСТРЕЧУ</div>
+                <div class="v">1 право на «Обнимемся?»</div>
+                <div class="s">
+                  Дата использования: <b>22 апреля</b> (или когда ты захочешь) ✅
+                </div>
+              </div>
+              <div class="stamp" onclick="openHug()">ДЕЙСТВИТЕЛЕН</div>
+            </div>
+
+            <!-- SARILMA MODAL -->
+            <div class="hugModal" id="hugModal">
+              <div class="hugCard">
+                <div class="hugHeart">💗</div>
+                <h2>Объятия активированы</h2>
+                <p>
+                  22 апреля я использую этот купон.<br />
+                  Никаких побегов 😄<br /><br />
+                  <b>Обнимемся?</b>
+                </p>
+                <button onclick="closeHug()">Ок 💞</button>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="primary" id="burstBtn">🌸 ОсЫпать цветами</button>
+              <button id="copyBtn">📋 Скопировать текст</button>
+            </div>
+
+            <div class="tile">
+              Примечание: эта страница — не просто сообщение, а маленький жест.
+              <small>Потому что иногда слов недостаточно — важно «сделать».</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ==== персонализация ====
+      const HER_NAME = "Анжелика";
+      const YOUR_NAME = "Samet";
+
+      // ==== целевая дата (проверь год!) ====
+      // 22 апреля 2026 00:00
+      const targetDate = new Date("2026-04-22T00:00:00+03:00");
+
+      // сегодня
+      const fmt = new Intl.DateTimeFormat("ru-RU", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+      document.getElementById("today").textContent = "📅 " + fmt.format(new Date());
+
+      // обратный отсчёт
+      function update() {
+        const now = new Date();
+        const diff = targetDate - now;
+        const d = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+        document.getElementById("days").textContent = d;
+
+        // прогресс: от 14 февраля до 22 апреля
+        const start = new Date("2026-02-14T00:00:00+03:00");
+        const total = targetDate - start;
+        const passed = now - start;
+        let pct = (passed / total) * 100;
+        pct = Math.max(0, Math.min(100, pct));
+        document.getElementById("fill").style.width = pct + "%";
+      }
+      update();
+      setInterval(update, 60 * 1000);
+
+      // частицы
+      const layer = document.getElementById("layer");
+      const icons = ["🌸", "🌼", "💗", "💘", "🦋", "✨", "🏙️", "☕", "🌉"];
+
+      function spawn(n = 1) {
+        for (let i = 0; i < n; i++) {
+          const el = document.createElement("div");
+          el.className = "p";
+          el.textContent = icons[Math.floor(Math.random() * icons.length)];
+          el.style.left = Math.random() * 100 + "vw";
+          el.style.bottom = -10 - Math.random() * 20 + "px";
+          el.style.fontSize = 18 + Math.random() * 26 + "px";
+          el.style.animationDuration = 4 + Math.random() * 3.2 + "s";
+          el.style.setProperty("--dx", Math.random() * 160 - 80 + "px");
+          layer.appendChild(el);
+          setTimeout(() => el.remove(), 9000);
+        }
+      }
+      setInterval(() => spawn(4), 1400);
+
+      function burst() {
+        for (let i = 0; i < 40; i++) setTimeout(() => spawn(1), i * 40);
+      }
+      document.getElementById("burstBtn").addEventListener("click", burst);
+
+      // копирование
+      const toast = document.getElementById("toast");
+      function showToast() {
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1200);
+      }
+      document.getElementById("copyBtn").addEventListener("click", async () => {
+        const text = `${HER_NAME}, сегодня 14 февраля.
+Может, мы и не «пара»… но ты для меня важна.
+Я с нетерпением жду дня, когда мы увидимся 22 апреля.
+— ${YOUR_NAME}`;
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast();
+        } catch (e) {
+          alert("Не удалось скопировать.\n\n" + text);
+        }
+      });
+
+      // МОДАЛЬНОЕ ОКНО ОБЪЯТИЙ
+      const hugModal = document.getElementById("hugModal");
+      function openHug() {
+        hugModal.classList.add("show");
+        burst();
+      }
+      function closeHug() {
+        hugModal.classList.remove("show");
+      }
+
+      // ❄️ ГЕНЕРАТОР СНЕГА
+      function spawnSnow() {
+        const snow = document.createElement("div");
+        snow.className = "snow";
+        snow.textContent = "❄️";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.fontSize = 10 + Math.random() * 14 + "px";
+        snow.style.opacity = Math.random();
+        snow.style.animationDuration = 5 + Math.random() * 5 + "s";
+        snow.style.transform = `translateX(${Math.random() * 40 - 20}px)`;
+        document.body.appendChild(snow);
+        setTimeout(() => snow.remove(), 10000);
+      }
+      // пусть снег идёт постоянно
+      setInterval(spawnSnow, 180);
+    </script>
+  </body>
+</html>
